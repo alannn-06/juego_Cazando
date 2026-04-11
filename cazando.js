@@ -65,6 +65,7 @@ function moverIzquierda(){
         limpiarCanvas();
         graficarGato();
         graficarComida();
+        detectarColision();
     }
 }
 
@@ -73,6 +74,7 @@ function moverDerecha(){
     limpiarCanvas();
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 
 function moverArriba(){
@@ -80,6 +82,7 @@ function moverArriba(){
     limpiarCanvas();
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 
 
@@ -88,7 +91,22 @@ function moverAbajo(){
     limpiarCanvas();
     graficarGato();
     graficarComida();
+    detectarColision();
 }
+
+function detectarColision(){
+    if(
+        gatoX < comidaX + ANCHOCOMIDA &&
+        gatoX + ANCHOGATO > comidaX &&
+        gatoY < comidaY + ALTURACOMIDA &&
+        gatoY + ALTURAGATO > comidaY
+    ){
+        alert("El gato ha probado la comida");
+    }
+    
+}
+
+
 
 
 document.getElementById("btnArriba").onclick = () => moverArriba();
