@@ -68,6 +68,27 @@ function moverIzquierda(){
     }
 }
 
+function moverDerecha(){
+    gatoX += 10;
+    limpiarCanvas();
+    graficarGato();
+    graficarComida();
+}
+
+function moverArriba(){
+    gatoY -= 10;
+    limpiarCanvas();
+    graficarGato();
+    graficarComida();
+}
+
+
+function moverAbajo(){
+    gatoY += 10;
+    limpiarCanvas();
+    graficarGato();
+    graficarComida();
+}
 
 
 document.getElementById("btnArriba").onclick = () => moverArriba();
