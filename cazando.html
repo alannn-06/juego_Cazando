@@ -6,16 +6,19 @@
   
 
 </head>
-<body>
+<body onload="graficarGato();">
+
+
 
   <h1>Juego Cazando</h1>
   <p>Autor: Alan Chanatasig</p>
   
-  
+  <div class="contenedor">
+    <canvas id="areaJuego" width="500" height="500"></canvas>
+  </div>
 
   <div class="controles">
     <button id="btnArriba">⬆</button>
-    <br>
     <button id="btnIzquierda">⬅</button>
     <button id="btnAbajo">⬇</button>
     <button id="btnDerecha">➡</button>
@@ -28,7 +31,7 @@
   </div>
 
   <p id="mensaje"></p>
-  
+  <script src="cazando.js"></script>
 
 
 </body>
