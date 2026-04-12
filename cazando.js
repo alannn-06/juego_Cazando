@@ -4,6 +4,7 @@ let btnArriba = document.getElementById("btnArriba");
 let btnIzquierda = document.getElementById("btnIzquierda");
 let btnAbajo = document.getElementById("btnAbajo");
 let btnDerecha = document.getElementById("btnDerecha");
+let puntaje = 0;
 
 const VELOCIDAD = 15;
 // Gato
@@ -101,7 +102,14 @@ function detectarColision(){
         gatoY < comidaY + ALTURACOMIDA &&
         gatoY + ALTURAGATO > comidaY
     ){
-        alert("El gato ha probado la comida");
+        puntaje++;
+        
+        mostrarEnSpan("puntos", puntaje);
+
+        comidaX = generarAleatorio(0, canvas.width - ANCHOCOMIDA);
+        comidaY = generarAleatorio(0, canvas.height - ALTURACOMIDA);
+
+        dibujarTodo();
     }
     
 }
