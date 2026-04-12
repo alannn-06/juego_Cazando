@@ -5,6 +5,8 @@ let btnIzquierda = document.getElementById("btnIzquierda");
 let btnAbajo = document.getElementById("btnAbajo");
 let btnDerecha = document.getElementById("btnDerecha");
 let puntaje = 0;
+let tiempo = 10;
+let intervalo;
 
 const VELOCIDAD = 15;
 // Gato
@@ -40,6 +42,7 @@ function iniciarJuego() {
     //COMIDA ESQUINA INFERIOR DERECHA
     comidaX = canvas.width - ANCHOCOMIDA;
     comidaY = canvas.height - ALTURACOMIDA;
+    intervalo = setInterval(restarTiempo, 1000);
 
     graficarGato();
     graficarComida();
@@ -112,6 +115,12 @@ function detectarColision(){
         dibujarTodo();
     }
     
+}
+
+function restarTiempo (){
+    tiempo --;
+    mostrarEnSpan("tiempo", tiempo);
+
 }
 
 
