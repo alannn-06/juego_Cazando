@@ -114,15 +114,33 @@ function detectarColision(){
 
         dibujarTodo();
     }
+    if (puntaje >= 6) {
+    clearInterval(intervalo);
+    alert("Haz ganado");
+    }
+
     
 }
 
 function restarTiempo (){
     tiempo --;
     mostrarEnSpan("tiempo", tiempo);
-
+    if (tiempo <= 0) {
+        clearInterval(intervalo); 
+        alert("Game Over");
+    }
 }
 
+function reiniciarJuego() {
+    clearInterval(intervalo);
+    puntaje = 0;
+    tiempo = 10;
+
+    mostrarEnSpan("puntos", puntaje);
+    mostrarEnSpan("tiempo", tiempo);
+    
+    iniciarJuego();
+}
 
 
 
@@ -130,3 +148,4 @@ document.getElementById("btnArriba").onclick = () => moverArriba();
 document.getElementById("btnAbajo").onclick = () => moverAbajo();
 document.getElementById("btnIzquierda").onclick = () => moverIzquierda();
 document.getElementById("btnDerecha").onclick = () => moverDerecha();
+document.getElementById("btnReiniciar").onclick = () => reiniciarJuego();
