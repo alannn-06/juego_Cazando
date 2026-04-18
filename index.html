@@ -4,17 +4,20 @@
   <title>Juego Cazando</title>
   <link rel="stylesheet" href="cazando.css"/>
   <script src="utils.js"></script>
-  
-
 </head>
 <body onload="iniciarJuego();">
 
-
-  <h1>Juego Cazando</h1>
+  <h1>
+  <img id="icono-titulo" src="Gato.png" alt="Icono Juego">Juego Cazando</h1>
   <p>Autor: Alan Chanatasig</p>
   
   <div class="contenedor">
     <canvas id="areaJuego" width="500" height="500"></canvas>
+
+    <div class="panel">
+      <span>Puntos <span id="puntos">0</span></span>
+      <span>Tiempo <span id="tiempo">10</span></span>
+    </div>
   </div>
 
   <div class="controles">
@@ -25,15 +28,8 @@
     <button id="btnReiniciar">Reiniciar Juego </button>
   </div>
 
-
-  <div class="panel">
-    <span>Puntos: <span id="puntos">0</span></span>
-    <span>Tiempo: <span id="tiempo">10</span></span>
-  </div>
-
   <p id="mensaje"></p>
   <script src="cazando.js"></script>
-
 
 </body>
 </html>

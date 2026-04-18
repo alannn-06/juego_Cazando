@@ -1,42 +1,147 @@
+/* Estética General Futurista */
 body {
   text-align: center;
-  font-family: Arial, sans-serif;
-  background: #f0f0f0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle, #1a1a2e 0%, #0f0f1b 100%);
+  color: #00d4ff;
   margin: 0;
   padding: 20px;
+  min-height: 100vh;
 }
 
 h1 {
+  margin-top: 0;
   margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px #00d4ff;
 }
 
-.panel {
-  margin: 15px 0;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
+p {
+  color: #505050;
+  font-size: 0.8em;
 }
 
+/* CONTENEDOR RELATIVO: Necesario para que el HUD se posicione sobre el Canvas */
+.contenedor {
+  position: relative;
+  display: inline-block; /* Se ajusta al tamaño del canvas */
+  margin: 20px auto;
+  border: 3px solid #00d4ff;
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* EL CANVAS: Ahora es el fondo del contenedor */
 canvas {
-  background: white;
-  border: 2px solid black;
+  display: block;
+  background-color: #0a192f;
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+  background-size: 25px 25px;
 }
 
+/* PANEL HUD: Posicionado absolutamente DENTRO del canvas */
+.panel {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  pointer-events: none; /* Permite que los clics pasen a través del texto al canvas si fuera necesario */
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.panel span {
+  background: rgba(10, 25, 47, 0.7);
+  padding: 5px 15px;
+  border: 1px solid #00ff9f;
+  border-radius: 4px;
+  color: #00ff9f;
+  font-size: 18px;
+  text-shadow: 0 0 5px #00ff9f;
+  box-shadow: 0 0 10px rgba(0, 255, 159, 0.2);
+}
+
+#puntos, #tiempo {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* CONTROLES */
 .controles {
   margin-top: 20px;
 }
 
 button {
   margin: 5px;
-  padding: 10px 16px;
-  font-size: 18px;
+  padding: 12px 20px;
+  font-size: 20px;
   cursor: pointer;
+  background: rgba(0, 212, 255, 0.1);
+  color: #00d4ff;
+  border: 2px solid #00d4ff;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #00d4ff;
+  color: #0a192f;
+  box-shadow: 0 0 30px #00d4ff;
+  transform: scale(1.1);
+}
+
+#btnReiniciar {
+  border-color: #ff0055;
+  color: #ff0055;
+}
+
+#btnReiniciar:hover {
+  background: #ff0055;
+  color: white;
+  box-shadow: 0 0 30px #ff0055;
 }
 
 #mensaje {
-  font-size: 20px;
-  font-weight: bold;
-  color: darkred;
-  margin-top: 15px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  font-size: 24px;
+  color: #ff0055;
+  text-shadow: 0 0 15px #ff0055;
+  margin: 0;
+  pointer-events: none;
+}
+
+/* Estilo para el icono al lado del título */
+#icono-titulo {
+  width: 50px;           /* Ajusta el tamaño aquí */
+  height: auto;
+  vertical-align: middle; /* Lo alinea al centro del texto */
+  margin-right: 15px;    /* Espacio entre el icono y el texto */
+  filter: drop-shadow(0 0 8px #00d4ff); /* Brillo neón cian */
+  transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el cursor sobre el título/icono */
+h1:hover #icono-titulo {
+  transform: rotate(15px) scale(1.2); /* Pequeña animación al pasar el mouse */
+  filter: drop-shadow(0 0 15px #00ff9f); /* Cambia el brillo a verde neón */
+}
+
+/* Aseguramos que el H1 use flex para alinear bien todo */
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px #00d4ff;
 }
