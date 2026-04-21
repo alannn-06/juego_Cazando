@@ -15,6 +15,9 @@ let gatoY = 0;
 const ANCHOGATO = 50;
 const ALTURAGATO = 50;
 
+const imgGato = new Image();
+imgGato.src = "Gatito.png";
+
 const LIMITE_X = canvas.width - ANCHOGATO;
 const LIMITE_Y = canvas.height - ALTURAGATO;
 
@@ -26,7 +29,8 @@ const ALTURACOMIDA = 30;
 
 
 function graficarGato() {
-    graficarRectangulo(gatoX, gatoY, ANCHOGATO, ALTURAGATO, "#000000");
+    ctx.drawImage(imgGato, gatoX, gatoY, ANCHOGATO, ALTURAGATO);
+
 
 };
 
