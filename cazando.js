@@ -5,7 +5,7 @@ let btnIzquierda = document.getElementById("btnIzquierda");
 let btnAbajo = document.getElementById("btnAbajo");
 let btnDerecha = document.getElementById("btnDerecha");
 let puntaje = 0;
-let tiempo = 30;
+let tiempo = 15;
 let intervalo;
 
 const VELOCIDAD = 15;
