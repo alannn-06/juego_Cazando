@@ -106,6 +106,7 @@ function detectarColision(){
         gatoY + ALTURAGATO > comidaY
     ){
         puntaje++;
+        tiempo = 15;
         
         mostrarEnSpan("puntos", puntaje);
 
@@ -118,6 +119,8 @@ function detectarColision(){
     clearInterval(intervalo);
     alert("Haz ganado");
     }
+
+
 
     
 }
