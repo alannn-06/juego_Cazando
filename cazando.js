@@ -18,6 +18,9 @@ const ALTURAGATO = 50;
 const imgGato = new Image();
 imgGato.src = "Gatito.png";
 
+const imgComida = new Image();
+imgComida.src = "manzana.png";
+
 const LIMITE_X = canvas.width - ANCHOGATO;
 const LIMITE_Y = canvas.height - ALTURAGATO;
 
@@ -35,7 +38,7 @@ function graficarGato() {
 };
 
 function graficarComida() {
-    graficarRectangulo(comidaX, comidaY, ANCHOCOMIDA, ALTURACOMIDA, "#ff0000");
+    ctx.drawImage(imgComida, comidaX, comidaY, ANCHOCOMIDA, ALTURACOMIDA);
 };
     // INICIAR JUEGO
 function iniciarJuego() {
